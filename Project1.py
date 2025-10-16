@@ -2,8 +2,12 @@
 # Student ID: 55794521
 # Email: mopofahl@umich.edu
 # Who or what you worked with on this homework (including generative AI like ChatGPT):
+# I worked alone on the final project, but I was initially in a group when submitting the project 1 checkpoint
 # Used ChatGPT for help with my unit tests and some pandas functions
 #used chatgpt to help convert dictionary to a dataframe for csv output
+# Used chat gpt to help me figure out with creating a new csv file to store the output in
+# asked chat gpt for help with NA values in the unit test and it siggested using pd.isna() to check for NaN values
+# chat gpt helped me with mt column order issues by building the rows list first and then converting to a dataframe
 #I also used pandas in my code as I have learned how to use it in SI261 
 
 import pandas as pd
@@ -22,7 +26,7 @@ def calculate_avg_mass_by_species_sex(data):
     avg_mass = data.groupby(['species', 'sex'])['body_mass_g'].mean().round(2)
     return avg_mass.to_dict()
 
-#Calculate average flipper length (mm) by island and species.
+#Calculate average flipper length by island and species.
 #Uses columns: island, species, flipper_length_mm
 #Returns dictionary { (island, species): avg_flipper }
 def calculate_avg_flipper_by_island_species(data):
